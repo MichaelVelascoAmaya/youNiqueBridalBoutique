@@ -13,4 +13,12 @@ body {
   padding: 0;
 }
 
-.App {}
+.App {
+  min-height: 100vh;
+  display:flex!important; 
+  flex-direction:column;
+}
+
+.AppBody {
+  flex: 1;
+}
