@@ -14,7 +14,13 @@ i18n
     // if you're using a language detector, do not define the lng option
     interpolation: {
       escapeValue: false // react already safes from xss
-    },
+    }
+  })
+
+  // change language document property to selected language in i18n
+  i18n.on('languageChanged', (language) => {
+    document.documentElement.lang = language;
   });
+  i18n.changeLanguage(i18n.language);
 
 export default i18n;
