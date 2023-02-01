@@ -1,15 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './App.module.css';
+import { withTranslation } from 'react-i18next';
 
-const App = () => (
+const App = ({ t, i18n }) => (
   <div className={styles.App} data-testid="App">
-    App Component
+    App Component {t('helloWorld')}
   </div>
 );
 
-App.propTypes = {};
-
-App.defaultProps = {};
-
-export default App;
+export default withTranslation()(App);
