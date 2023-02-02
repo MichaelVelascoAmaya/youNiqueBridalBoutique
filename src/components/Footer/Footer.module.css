@@ -1,1 +1,36 @@
-.Footer {}
+.Footer {
+  position:fixed;
+  bottom:0;
+  margin: 0;
+  width: 100vw;
+}
+
+.toggleButton {
+  position: absolute!important;
+  z-index: -1!important;
+  background-color: white!important;
+  left: 16px;
+  top: -16px;
+}
+
+.toggleButtonIcon {
+  position: absolute;
+  top:-1px; 
+}
+
+.footerBox{
+  background-color: white;
+  height: auto;
+}
+
+.footerBoxOpen {
+  padding: 16px!important;
+  transition: all 0.20s;
+  height: auto;
+}
+
+.footerBoxClose {
+  padding: 0px!important;
+  height: 0;
+  transition: all 0.20s;
+}

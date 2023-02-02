@@ -12,7 +12,7 @@ const App = ({ t, i18n }) => {
       <Container maxWidth={false} disableGutters={true} className={styles.AppBody} >
         {t('helloWorld')}
       </Container>
-      <Footer />
+      <Footer changeOnSize={'md'} />
     </Container>
   );
 };
