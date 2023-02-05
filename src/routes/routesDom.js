@@ -1,10 +1,11 @@
 import { Trans } from 'react-i18next';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from '../components/App/App';
 import { dressIcon, emailIcon, homeIcon, orderIcon } from '../assets/icons/icons';
 
 
-const rootPath = '/';
+const rootPath = 'app';
+const homePath = 'home';
 
 const routesDom = createBrowserRouter([
   {
@@ -13,6 +14,12 @@ const routesDom = createBrowserRouter([
     label: <Trans>menuList.home</Trans>,
     icon: homeIcon,
     children: [
+      {
+        path: homePath,
+        element: <div>home!</div>,
+        label: <Trans>menuList.home</Trans>,
+        icon: homeIcon,
+      },
       {
         path: 'collections',
         element: <div>collections!</div>,
@@ -41,6 +48,10 @@ const routesDom = createBrowserRouter([
       },
     ],
   },
+  {
+    path: '*',
+    element: <Navigate to={`/${rootPath}`} replace={true} />
+  },
 ]);
 
 // get route info by path
@@ -49,5 +60,6 @@ const routeByPath = path => routesDom.routes.find(element => element.path === pa
 export {
   routesDom,
   rootPath,
+  homePath,
   routeByPath,
 };

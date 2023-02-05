@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 import styles from './MenuList.module.css';
 import { Tab, Tabs } from '@mui/material';
 import { useLocation, useNavigate  } from 'react-router-dom';
-import { routeByPath, rootPath } from '../../../routes/routesDom';
+import { routeByPath, rootPath, homePath } from '../../../routes/routesDom';
 import DryCleaningIcon from '@mui/icons-material/DryCleaning';
 
 const MenuList = ({ orientation, onClickInTab, sxTabs, sxTabsContent }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const routeTab = location.pathname.split('/')[1]
-  const [value, setValue] = React.useState(routeTab.length === 0 ? '/' : routeTab);
-  const routes = routeByPath(rootPath)
-  const routesToTabs = routes?.children ?? [];
+  const routeTab = location.pathname.slice(1)
+  const [value, setValue] = React.useState(routeTab === rootPath ? homePath : routeTab.split('/')[1]);
+  const routes = routeByPath(rootPath)?.children ?? []; 
   
   return (
     <Tabs 
@@ -26,17 +25,8 @@ const MenuList = ({ orientation, onClickInTab, sxTabs, sxTabsContent }) => {
       allowScrollButtonsMobile
       aria-label="scrollable auto tabs example"
     >
-      <Tab 
-        sx={{ ...sxTabs }}
-        key={ `route-${routes.path}` } 
-        label={ routes.label } 
-        icon={ routes.icon ?? <DryCleaningIcon /> } 
-        iconPosition='start' 
-        value={ `${routes.path}` } 
-        onClick={ () => { navigate(routes.path); onClickInTab(); }}
-      />
       {
-        routesToTabs.map( (route, i) => (
+        routes.map( (route, i) => (
           <Tab key={ `route-${route.path}` }
             sx={{ ...sxTabs }} 
             label={ route.label }
