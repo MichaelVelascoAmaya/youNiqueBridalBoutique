@@ -50,7 +50,7 @@ const routesDom = createBrowserRouter([
   },
   {
     path: '*',
-    element: <Navigate to={`/${rootPath}`} replace={true} />
+    element: <Navigate to={`/${rootPath}/${homePath}`} replace={true} />
   },
 ]);
 
