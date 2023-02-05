@@ -1,36 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './FloatingHeader.module.css';
-import { Box } from '@mui/system';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Drawer, Fab } from '@mui/material';
+import { Drawer, Fab, Paper } from '@mui/material';
+import Image from 'mui-image';
+import MenuList from '../../menuComponents/MenuList/MenuList';
 
 const FloatingHeader = ({ anchor }) => {
-
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
+  const [open, setopen] = useState(false);
   return (
-    <Box className={styles.FloatingHeader}>
+    <>
       <Drawer
         anchor={anchor}
-        open={state[anchor]}
-        onClose={toggleDrawer(anchor, false)}
+        open={open}
+        onClose={ () => setopen(false) }
+        SlideProps={{  }}
       >
-        <Box style={{ padding: 2 }} >
-          header  
-        </Box>
+      <Paper component='header' className={styles.header} square >
+        <Image src='images/logo.jpg' width={180} height='auto' duration={0} />
+        <MenuList orientation='vertical' alignItems='center' 
+          onClickInTab={ () => setopen(false) } 
+          sxTabs={{ maxWidth: 'none' }} 
+          sxTabsContent={{ width: '100vw' }}
+        />
+      </Paper>
       </Drawer>
       <Fab
         color="primary"
@@ -40,11 +33,11 @@ const FloatingHeader = ({ anchor }) => {
           bottom: 16,
           right: 16,
         }}
-        onClick={toggleDrawer(anchor, true)}
+        onClick={ () => setopen(true) }
       >
         <MenuIcon />
       </Fab>
-    </Box>
+    </>
   );
 };
 

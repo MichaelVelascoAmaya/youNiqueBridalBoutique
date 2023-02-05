@@ -1,1 +1,9 @@
 .FloatingHeader {}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+  padding-top: 16px;
+}
