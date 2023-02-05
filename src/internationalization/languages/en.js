@@ -1,5 +1,10 @@
 const en = {
-  helloWorld: 'Hello World!',
+  menuList: {
+    home: 'Home',
+    collections: 'Collections',
+    appointment: 'Appointment',
+    'contact-us': 'Contact Us',
+  },
   others: {}
 }
 

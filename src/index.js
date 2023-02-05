@@ -2,17 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './internationalization/i18n';
-import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@emotion/react';
 import theme from './others/themeApp';
+import { RouterProvider } from "react-router-dom";
+import { routesDom } from './routes/routesDom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider theme={theme}>
     <I18nextProvider i18n={i18n}>
       <React.StrictMode>
-        <App />
+        <RouterProvider router={routesDom} />
       </React.StrictMode>
     </I18nextProvider>
   </ThemeProvider>
