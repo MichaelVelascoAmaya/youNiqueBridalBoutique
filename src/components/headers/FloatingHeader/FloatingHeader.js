@@ -14,11 +14,10 @@ const FloatingHeader = ({ anchor }) => {
         anchor={anchor}
         open={open}
         onClose={ () => setopen(false) }
-        SlideProps={{  }}
       >
       <Paper component='header' className={styles.header} square >
         <Image src='images/logo.jpg' width={180} height='auto' duration={0} />
-        <MenuList orientation='vertical' alignItems='center' 
+        <MenuList orientation='vertical'
           onClickInTab={ () => setopen(false) } 
           sxTabs={{ maxWidth: 'none' }} 
           sxTabsContent={{ width: '100vw' }}

@@ -6,7 +6,7 @@ import { useLocation, useNavigate  } from 'react-router-dom';
 import { routeByPath, rootPath } from '../../../routes/routesDom';
 import DryCleaningIcon from '@mui/icons-material/DryCleaning';
 
-const MenuList = ({ orientation }) => {
+const MenuList = ({ orientation, onClickInTab, sxTabs, sxTabsContent }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const routeTab = location.pathname.split('/')[1]
@@ -16,6 +16,7 @@ const MenuList = ({ orientation }) => {
   
   return (
     <Tabs 
+      sx={{ ...sxTabsContent }}
       value={value}
       className={ styles.MenuList }
       onChange={ (e, v) => setValue(v) }
@@ -26,21 +27,23 @@ const MenuList = ({ orientation }) => {
       aria-label="scrollable auto tabs example"
     >
       <Tab 
+        sx={{ ...sxTabs }}
         key={ `route-${routes.path}` } 
         label={ routes.label } 
         icon={ routes.icon ?? <DryCleaningIcon /> } 
         iconPosition='start' 
         value={ `${routes.path}` } 
-        onClick={ () => navigate(routes.path)}
+        onClick={ () => { navigate(routes.path); onClickInTab(); }}
       />
       {
         routesToTabs.map( (route, i) => (
-          <Tab key={ `route-${route.path}` } 
+          <Tab key={ `route-${route.path}` }
+            sx={{ ...sxTabs }} 
             label={ route.label }
             icon={ route.icon ?? <DryCleaningIcon /> }
             iconPosition='start'
             value={ `${route.path}` }
-            onClick={ () => navigate(route.path)}
+            onClick={ () => { navigate(route.path); onClickInTab();  }}
           />
         ))
       }
@@ -49,11 +52,17 @@ const MenuList = ({ orientation }) => {
 };
 
 MenuList.propTypes = {
-  orientation: PropTypes.oneOf(['vertical', 'horizontal'])
+  orientation: PropTypes.oneOf(['vertical', 'horizontal']),
+  onClickInTab: PropTypes.func,
+  sxTabs: PropTypes.object,
+  sxTabsContent: PropTypes.object,
 };
 
 MenuList.defaultProps = {
-  orientation: 'horizontal'
+  orientation: 'horizontal',
+  onClickInTab: () => {},
+  sxTabs: {},
+  sxTabsContent: {},
 };
 
 export default MenuList;
