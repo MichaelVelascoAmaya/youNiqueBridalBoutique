@@ -1,7 +1,8 @@
 import { Trans } from 'react-i18next';
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../components/App/App';
-import OtherHousesOutlinedIcon from '@mui/icons-material/OtherHousesOutlined';
+import { dressIcon, emailIcon, homeIcon, orderIcon } from '../assets/icons/icons';
+
 
 const rootPath = '/';
 
@@ -10,13 +11,13 @@ const routesDom = createBrowserRouter([
     path: rootPath,
     element: <App />,
     label: <Trans>menuList.home</Trans>,
-    icon: <OtherHousesOutlinedIcon />,
+    icon: homeIcon,
     children: [
       {
         path: 'collections',
         element: <div>collections!</div>,
         label: <Trans>menuList.collections</Trans>,
-        icon: null,
+        icon: dressIcon,
         children: [
           {
             path: 'collection-one',
@@ -30,13 +31,13 @@ const routesDom = createBrowserRouter([
         path: "appointment",
         element: <div>appointment!</div>,
         label: <Trans>menuList.appointment</Trans>,
-        icon: null,
+        icon: orderIcon,
       },
       {
         path: "contact-us",
         element: <div>contact-us!</div>,
         label: <Trans>menuList.contact-us</Trans>,
-        icon: null,
+        icon: emailIcon,
       },
     ],
   },
