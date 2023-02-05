@@ -16,7 +16,7 @@ const FloatingHeader = ({ anchor }) => {
         onClose={ () => setopen(false) }
       >
       <Paper component='header' className={styles.header} square >
-        <Image src='images/logo.jpg' width={180} height='auto' duration={0} />
+        <Image src='/images/logo.jpg' width={180} height='auto' duration={0} />
         <MenuList orientation='vertical'
           onClickInTab={ () => setopen(false) } 
           sxTabs={{ maxWidth: 'none' }} 
