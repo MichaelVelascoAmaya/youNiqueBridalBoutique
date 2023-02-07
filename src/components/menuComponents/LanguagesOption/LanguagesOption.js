@@ -11,7 +11,7 @@ const LanguagesOption = ({ i18n}) => {
       {
         Object.keys(translateData).map( (v) => (
           <ListItem key={`languages-list-${v}`} disablePadding>
-            <ListItemButton onClick={ () => {i18n.changeLanguage(v); console.log(v)} }>
+            <ListItemButton onClick={ () => i18n.changeLanguage(v) }>
               <ListItemText primary={translateData[v].translation.lang} />
             </ListItemButton>
           </ListItem>
