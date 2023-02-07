@@ -10,17 +10,13 @@ import PopupOption from '../PopupOption/PopupOption';
 
 const MenuList = ({ orientation, onClickInTab, sxTabs, sxTabsContent, otherOptions }) => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const routeTab = location.pathname.slice(1)
+  const routeTab = useLocation().pathname.slice(1)
   const [value, setValue] = React.useState(routeTab === rootPath ? homePath : routeTab.split('/')[1]);
-  const routes = [...(routeByPath(rootPath)?.children ?? []), ...otherOptions]; 
+  const routes = [].concat((routeByPath(rootPath)?.children ?? []), otherOptions); 
 
-  const itemEls = useRef({})
-  const [itemElsState, setTtemElsState] = useState(false)
-
-  useEffect(() => {
-    setTtemElsState(true)
-  }, [itemEls.current])
+  const itemEls = useRef([]);
+  const [itemElsState, setTtemElsState] = useState(false);
+  useEffect(() => setTtemElsState(true), [itemEls]);
   
   return (
     <Box>

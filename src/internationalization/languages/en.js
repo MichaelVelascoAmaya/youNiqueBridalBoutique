@@ -1,4 +1,5 @@
 const en = {
+  lang: 'English',
   menuList: {
     home: 'Home',
     collections: 'Collections',

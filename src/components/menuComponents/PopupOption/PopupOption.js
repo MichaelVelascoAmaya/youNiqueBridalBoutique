@@ -45,7 +45,7 @@ const PopupOption = ({ children, targetOpen, openMethod }) => {
 
 PopupOption.propTypes = {
   children: PropTypes.node,
-  targetOpen: PropTypes.node,
+  targetOpen: PropTypes.instanceOf(HTMLElement),
   openMethod: PropTypes.oneOf(['click', 'hover']),
 };
 

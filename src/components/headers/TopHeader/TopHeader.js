@@ -30,7 +30,7 @@ TopHeader.propTypes = {
 };
 
 TopHeader.defaultProps = {
-  otherButtons: {},
+  otherButtons: [],
 };
 
 export default TopHeader;
