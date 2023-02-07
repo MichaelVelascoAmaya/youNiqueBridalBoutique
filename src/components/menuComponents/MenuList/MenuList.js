@@ -7,6 +7,7 @@ import { routeByPath, rootPath, homePath } from '../../../routes/routesDom';
 import DryCleaningIcon from '@mui/icons-material/DryCleaning';
 import { Box } from '@mui/system';
 import PopupOption from '../PopupOption/PopupOption';
+import SocialNetworksMenu from '../SocialNetworksMenu/SocialNetworksMenu';
 
 const MenuList = ({ orientation, onClickInTab, sxTabs, sxTabsContent, otherOptions }) => {
   const navigate = useNavigate();
@@ -19,11 +20,15 @@ const MenuList = ({ orientation, onClickInTab, sxTabs, sxTabsContent, otherOptio
   useEffect(() => setTtemElsState(true), [itemEls]);
   
   return (
-    <Box>
+    <Box className={ styles.MenuList } 
+      sx={{ 
+        flexDirection: orientation === 'vertical' ? 'column' : 'row' ,
+        px: orientation === 'vertical' ? 0 : 2 
+      }} 
+    >
       <Tabs 
         sx={{ ...sxTabsContent }}
         value={value}
-        className={ styles.MenuList }
         onChange={ (e, v) => setValue(v) }
         variant='scrollable'
         orientation={orientation}
@@ -55,6 +60,7 @@ const MenuList = ({ orientation, onClickInTab, sxTabs, sxTabsContent, otherOptio
           </React.Fragment>
         ) : <React.Fragment key={i}></React.Fragment> )
       }
+      <SocialNetworksMenu direction={orientation === 'vertical' ? 'row' : 'column'} />
     </Box>
   )
 };
