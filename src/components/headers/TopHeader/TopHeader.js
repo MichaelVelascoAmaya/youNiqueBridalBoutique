@@ -5,8 +5,8 @@ import { Paper } from '@mui/material';
 import Image from 'mui-image';
 import MenuList from '../../menuComponents/MenuList/MenuList';
 
-const TopHeader = ({ otherButtons }) => (
-  <Paper component='header' className={styles.TopHeader} square >
+const TopHeader = ({ otherButtons, reference }) => (
+  <Paper component='header' className={styles.TopHeader} square ref={reference} >
     <Image src='/images/logo.jpg' width={100} />
     <MenuList orientation='horizontal' otherOptions={otherButtons} />
   </Paper>
@@ -27,10 +27,14 @@ TopHeader.propTypes = {
       }),
     })
   ),
+  reference: PropTypes.shape({
+    current: PropTypes.instanceOf(HTMLElement),
+  }),
 };
 
 TopHeader.defaultProps = {
   otherButtons: [],
+  reference: { current: null },
 };
 
 export default TopHeader;

@@ -5,6 +5,7 @@ import { dressIcon, emailIcon, homeIcon, orderIcon } from '../assets/icons/icons
 import LanguageIcon from '@mui/icons-material/Language';
 import LanguagesOption from '../components/menuComponents/LanguagesOption/LanguagesOption';
 import { Translation } from 'react-i18next';
+import HomePage from '../components/pages/HomePage/HomePage';
 
 // get route info by path
 const routeByPath = path => routesDom.routes.find(element => element.path === path);
@@ -26,7 +27,7 @@ const routesDom = createBrowserRouter([
     children: [
       {
         path: homePath,
-        element: <div>home!</div>,
+        element: <HomePage />,
         label: transtaleComp('menuList.home'),
         icon: homeIcon,
         navigateButton: true,

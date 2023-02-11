@@ -8,11 +8,11 @@ import { Box } from '@mui/system';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const Footer = ({ changeOnSize }) => {
+const Footer = ({ changeOnSize, reference }) => {
   const theme = useTheme();
   const [footerBoxOpen, setFooterBoxOpen] = useState(useMediaQuery(theme.breakpoints.up(changeOnSize)));
   return (
-    <Paper component="footer" square className={styles.Footer} >
+    <Paper component="footer" square className={styles.Footer} ref={reference} >
       <Box>
         <Fab className={styles.toggleButton} onClick={ () => setFooterBoxOpen(p => !p) } >
           { footerBoxOpen ? <KeyboardArrowDownIcon className={styles.toggleButtonIcon} /> : <KeyboardArrowUpIcon className={styles.toggleButtonIcon} /> }
@@ -27,10 +27,14 @@ const Footer = ({ changeOnSize }) => {
 
 Footer.propTypes = {
   changeOnSize: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  reference: PropTypes.shape({
+    current: PropTypes.instanceOf(HTMLElement),
+  }),
 };
 
 Footer.defaultProps = {
-  changeOnSize:'sm'
+  changeOnSize:'sm',
+  reference: { current: null },
 };
 
 export default Footer;

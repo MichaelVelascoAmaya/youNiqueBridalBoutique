@@ -6,7 +6,7 @@ import { Drawer, Fab, Paper } from '@mui/material';
 import Image from 'mui-image';
 import MenuList from '../../menuComponents/MenuList/MenuList';
 
-const FloatingHeader = ({ anchor, otherButtons }) => {
+const FloatingHeader = ({ anchor, otherButtons, reference }) => {
   const [open, setopen] = useState(false);
   return (
     <>
@@ -15,7 +15,7 @@ const FloatingHeader = ({ anchor, otherButtons }) => {
         open={open}
         onClose={ () => setopen(false) }
       >
-      <Paper component='header' className={styles.header} square >
+      <Paper component='header' className={styles.header} square ref={reference} >
         <Image src='/images/logo.jpg' width={180} height='auto' duration={0} />
         <MenuList orientation='vertical'
           onClickInTab={ () => setopen(false) } 
@@ -57,11 +57,15 @@ FloatingHeader.propTypes = {
       }),
     })
   ),
+  reference: PropTypes.shape({
+    current: PropTypes.instanceOf(HTMLElement),
+  }),
 };
 
 FloatingHeader.defaultProps = {
   anchor: 'right',
   otherButtons: [],
+  reference: { current: null },
 };
 
 export default FloatingHeader;
