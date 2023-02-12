@@ -3,11 +3,19 @@ import React from 'react';
 import styles from './HomePage.module.css';
 import { Box } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Mousewheel } from 'swiper';
 import 'swiper/css';
+import 'swiper/css/pagination';
 
 const HomePage = () => (
   <Box height='inherit' className={ styles.HomePage } >
-    <Swiper className={ styles.swiper } direction='vertical' slidesPerView={1} >
+    <Swiper className={ styles.swiper } 
+      modules={[Mousewheel, Pagination]}
+      direction='vertical' 
+      slidesPerView={1} 
+      pagination={{ clickable: true }}
+      mousewheel={true}
+    >
       <SwiperSlide>Image</SwiperSlide>
       <SwiperSlide>welcome to our history</SwiperSlide>
       <SwiperSlide>about us</SwiperSlide>
