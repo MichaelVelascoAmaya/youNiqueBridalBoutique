@@ -2,6 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import styles from './HomePage.module.css';
 import { Box } from '@mui/material';
+import WelcomeToOurHistory from './WelcomeToOurHistory/WelcomeToOurHistory';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Mousewheel } from 'swiper';
 import 'swiper/css';
@@ -17,7 +18,9 @@ const HomePage = () => (
       mousewheel={true}
     >
       <SwiperSlide>Image</SwiperSlide>
-      <SwiperSlide>welcome to our history</SwiperSlide>
+      <SwiperSlide>
+        <WelcomeToOurHistory />
+      </SwiperSlide>
       <SwiperSlide>about us</SwiperSlide>
       <SwiperSlide>brands images</SwiperSlide>
       <SwiperSlide>find us</SwiperSlide>
