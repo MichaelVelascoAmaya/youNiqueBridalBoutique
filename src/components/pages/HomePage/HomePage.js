@@ -9,9 +9,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import CoverPage from './CoverPage/CoverPage';
 import { withTranslation } from 'react-i18next';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { rootPath } from '../../../routes/routesDom';
 
 const HomePage = ({ t }) => {
+  const navigate = useNavigate();
   return (
     <Box height='inherit' className={styles.HomePage} >
       <Swiper className={styles.swiper}
@@ -23,7 +25,7 @@ const HomePage = ({ t }) => {
       >
         <SwiperSlide>
           <CoverPage
-            navigate={<Navigate to={'/app/collections'} replace={true} />}
+            buttonOnClick={(e) => navigate(`/${rootPath}/collections`)}
             imageBackground='/images/backgroundCoverPages/label.jpg'
             title={t('withoutTranslations.appName')}
             buttonTitle={t('menuList.collections')}
