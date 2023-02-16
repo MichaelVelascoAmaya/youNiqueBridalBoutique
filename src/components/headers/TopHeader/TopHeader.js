@@ -7,7 +7,7 @@ import MenuList from '../../menuComponents/MenuList/MenuList';
 
 const TopHeader = ({ otherButtons, reference }) => (
   <Paper component='header' className={styles.TopHeader} square ref={reference} >
-    <Image src='/images/logo.jpg' width={100} />
+    <Image src='/images/logo.jpg' width={80} />
     <MenuList orientation='horizontal' otherOptions={otherButtons} />
   </Paper>
 );
