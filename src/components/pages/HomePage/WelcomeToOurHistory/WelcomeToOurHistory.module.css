@@ -1,20 +1,22 @@
 .WelcomeToOurHistory {
   height: inherit;
-  padding: 22px;
   text-align: justify;
 }
 
 .grid-container {
-  height: inherit;
+  height: inherit!important;
 }
 
-.grid-column-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 36px!important;
-}
+.grid-column-row {}
 
 .swiper-container {
   height: inherit;
+}
+
+.swiper-container > div:first-child {
+  height: inherit!important;
+}
+
+.swiper-slide {
+  display: flex!important;
 }

@@ -22,24 +22,28 @@ const WelcomeToOurHistory = () => (
           className={styles['grid-container']}
         >
           <Grid className={styles['grid-column-row']} item xs={6} >
-            <WtohText />
+            <WtohText sx={{ px:5 }} />
           </Grid>
           <Grid className={styles['grid-column-row']} item xs={6} >
             <WtohImage />
           </Grid>
         </Grid> 
       : 
-      <Swiper className={styles['swiper-container']}
-        modules={[Pagination]}
-        pagination={{ clickable: true }}
-      >
-        <SwiperSlide>
-          <WtohText />
-        </SwiperSlide>
-        <SwiperSlide>
-          <WtohImage />
-        </SwiperSlide>
-      </Swiper>
+      <Box className={styles['swiper-container']} >
+        <Swiper 
+          modules={[Pagination]}
+          pagination={{ 
+            clickable: true
+          }}
+        >
+          <SwiperSlide className={styles['swiper-slide']} >
+            <WtohText sx={{ p:4 }} />
+          </SwiperSlide>
+          <SwiperSlide className={styles['swiper-slide']} >
+            <WtohImage />
+          </SwiperSlide>
+        </Swiper>
+      </Box>
     }
   </Box>
 );
