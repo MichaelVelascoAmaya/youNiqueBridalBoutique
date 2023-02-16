@@ -12,7 +12,7 @@ const App = () => {
 
   const containerCalcHeigth = () => {
     const headerHeight = headerRef.current?.offsetHeight ?? 0;
-    const containerHeight = containerRef.current?.offsetHeight ?? 0;
+    const containerHeight = window.innerHeight;
     const containerCalcHeigth = containerHeight - headerHeight
     setContainerHeigth(containerCalcHeigth);
     return containerCalcHeigth;
