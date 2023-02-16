@@ -1,4 +1,5 @@
 const withoutTranslations = {
+  appName:'You Nique Bridal Boutique',
   socialNetworks: {
     facebook: {
       label: 'Facebook',

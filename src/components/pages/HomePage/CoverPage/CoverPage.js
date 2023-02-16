@@ -1,0 +1,42 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styles from './CoverPage.module.css';
+import { Box, Button, Typography } from '@mui/material';
+import UseAnimations from 'react-useanimations';
+import arrowDown from 'react-useanimations/lib/arrowDown';
+import { Trans } from 'react-i18next';
+
+const CoverPage = ({ navigate, imageBackground, title, description, buttonTitle, arrowOnclick }) => {
+  const [click, setClick] = useState(false);
+  return (
+    <Box className={styles.CoverPage} sx={{ backgroundImage: 'url("'+imageBackground+'");' }} data-testid="CoverPage" >
+      <Box className={styles.section}>
+        <Typography className={styles['text-primary']} variant="h1" fontFamily={'system-ui'} >{title}</Typography>
+        <Typography className={styles['text-secondary']} variant='overline' >{description}</Typography>
+        <Button variant="outlined" color='white' size="large" sx={{ mt:2 }} onClick={() => setClick(v => !v)} >{buttonTitle}{ click && navigate }</Button>
+      </Box>
+      <Box className={styles.section}>
+        <UseAnimations animation={arrowDown} size={45} onClick={arrowOnclick} />
+      </Box>
+    </Box>
+  );
+}
+
+CoverPage.propTypes = {
+  navigate: PropTypes.any,
+  imageBackground: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  buttonTitle: PropTypes.string,
+  arrowOnclick: PropTypes.func,
+};
+
+CoverPage.defaultProps = {
+  title: <Trans>withoutTranslations.appName</Trans>,
+  imageBackground: '',
+  description: '',
+  buttonTitle: '-',
+  arrowOnclick: () => { },
+};
+
+export default CoverPage;

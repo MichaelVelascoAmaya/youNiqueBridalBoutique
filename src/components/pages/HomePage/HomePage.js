@@ -7,29 +7,41 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Mousewheel } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import CoverPage from './CoverPage/CoverPage';
+import { withTranslation } from 'react-i18next';
+import { Navigate } from 'react-router-dom';
 
-const HomePage = () => (
-  <Box height='inherit' className={ styles.HomePage } >
-    <Swiper className={ styles.swiper } 
-      modules={[Mousewheel, Pagination]}
-      direction='vertical' 
-      slidesPerView={1} 
-      pagination={{ clickable: true }}
-      mousewheel={true}
-    >
-      <SwiperSlide>Image</SwiperSlide>
-      <SwiperSlide>
-        <WelcomeToOurHistory />
-      </SwiperSlide>
-      <SwiperSlide>about us</SwiperSlide>
-      <SwiperSlide>brands images</SwiperSlide>
-      <SwiperSlide>find us</SwiperSlide>
-    </Swiper>
-  </Box>
-);
+const HomePage = ({ t }) => {
+  return (
+    <Box height='inherit' className={styles.HomePage} >
+      <Swiper className={styles.swiper}
+        modules={[Mousewheel, Pagination]}
+        direction='vertical'
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        mousewheel={true}
+      >
+        <SwiperSlide>
+          <CoverPage
+            navigate={<Navigate to={'/app/collections'} replace={true} />}
+            imageBackground='/images/backgroundCoverPages/label.jpg'
+            title={t('withoutTranslations.appName')}
+            buttonTitle={t('menuList.collections')}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <WelcomeToOurHistory />
+        </SwiperSlide>
+        <SwiperSlide>about us</SwiperSlide>
+        <SwiperSlide>brands images</SwiperSlide>
+        <SwiperSlide>find us</SwiperSlide>
+      </Swiper>
+    </Box>
+  );
+}
 
 HomePage.propTypes = {};
 
 HomePage.defaultProps = {};
 
-export default HomePage;
+export default withTranslation()(HomePage);
