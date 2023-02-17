@@ -7,7 +7,7 @@ import Image from 'mui-image';
 const WtohImage = ({ sx }) => (
   <Box className={styles.WtohImage} 
     sx={{ 
-      width: {xs: 'auto', sm: '75%', md: '60%'},
+      width: { xs: 'auto', sm: '75%', md: '60%', lg: '50%' },
       ...sx 
     }} >
     <Image 
