@@ -7,7 +7,7 @@ import arrowDown from 'react-useanimations/lib/arrowDown';
 import arrowUp from 'react-useanimations/lib/arrowUp';
 import { Trans } from 'react-i18next';
 
-const CoverPage = ({ buttonOnClick, imageBackground, title, description, buttonTitle, arrowOnclick, arroyDirection }) => (
+const CoverPage = ({ buttonOnClick, imageBackground, title, description, buttonTitle, upComponent, downComponenet, arrowOnclick, arroyDirection }) => (
   <Box className={styles.CoverPage} sx={{ backgroundImage: 'url("' + imageBackground + '");' }} data-testid="CoverPage" >
     <Box className={styles.section}>
     {
@@ -18,11 +18,23 @@ const CoverPage = ({ buttonOnClick, imageBackground, title, description, buttonT
     }
     </Box>
 
+    {
+      upComponent && (
+        <Box className={styles.section}>{upComponent}</Box>
+      )
+    }
+
     <Box className={styles.section}>
       <Typography className={styles['text-primary']} variant="h1" fontFamily={'system-ui'} >{title}</Typography>
       <Typography className={styles['text-secondary']} variant='overline' >{description}</Typography>
       <Button variant="outlined" onClick={buttonOnClick} color='white' size="large" sx={{ mt: 2 }}>{buttonTitle}</Button>
     </Box>
+
+    {
+      downComponenet && (
+        <Box className={styles.section}>{downComponenet}</Box>
+      )
+    }
 
     <Box className={styles.section}>
     {
@@ -42,6 +54,8 @@ CoverPage.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   buttonTitle: PropTypes.string,
+  upComponent: PropTypes.elementType,
+  downComponenet: PropTypes.elementType,
   arrowOnclick: PropTypes.func,
   arroyDirection: PropTypes.oneOf(['top', 'bottom', 'left', 'rigth', 'top-bottom', 'left-rigth']),
 };
