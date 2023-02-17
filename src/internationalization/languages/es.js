@@ -36,6 +36,27 @@ const es = {
       paragraphThree: 'Es una historia de amor que aún se está escribiendo, espero que sea un capítulo de nuestro libro.',
       end: 'Patricia Sobrin - CEO',
     },
+    aboutUs: {
+      title: 'Nuestras boutiques fueron creadas para ayudarte a cumplir tus sueños de boda, trabajamos cada día para ofrecer lo mejor para ese día especial.',
+      paragraphOne: 'Hemos estado aconsejando por más de 18 años, docenas de novias con las más día importante en sus vidas, satisfaciendo sus sueños de un día perfecto lleno de amor. Ofrecemos las mejores colecciones de vestidos de novia de España, Italia, Australia y Estados Unidos para satisfacer todos los gustos de la novia. Seleccionar el vestido perfecto para su boda es una de las decisiones más importantes que tomará en su vida.',
+      paragraphTwo: 'Crear looks nupciales de pies a cabeza es sólo el principio. Todos los miembros de la fiesta de bodas, las floristas, las mamás y los invitados especiales recibirán el mismo nivel de atención.',
+      paragraphThree: 'He seleccionado a mano una impresionante variedad de vestidos, incluyendo vestidos de fiesta, de ocasión y de baile. Junto con mis consejos de estilo personalizados, alteraciones de expertos y toques finales como diademas, joyas y otros accesorios, seguro que tendrás una experiencia como ninguna otra.',
+      ourValues: { 
+        title: 'Nuestros valores',
+        firstValue: {
+          title: 'LO HACEMOS CON AMOR Y PASIÓN',
+          description: 'Cuando estás enamorado o haciendo lo que amas, la vida es hermosa.',
+        },
+        secondValue: {
+          title: 'HONESTIDAD Y RESPETO',
+          description: 'La honestidad y el respeto son la piedra angular de nuestro negocio.',
+        },
+        thirdValue: {
+          title: 'TRABAJO EN EQUIPO Y EXCELENCIA',
+          description: 'La perfección no es alcanzable, pero si perseguimos la perfección juntos podemos alcanzar la excelencia.',
+        },
+      },
+    },
   },
 }
 
