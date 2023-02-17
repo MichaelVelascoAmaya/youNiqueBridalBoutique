@@ -35,6 +35,7 @@ const HomePage = ({ t }) => {
             imageBackground='/images/backgroundCoverPages/label.jpg'
             title={t('withoutTranslations.appName')}
             buttonTitle={t('menuList.collections')}
+            arroyDirection='bottom'
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -44,6 +45,7 @@ const HomePage = ({ t }) => {
             title={t('homePageCoverTexts.welcomeToOurLoveStory.title')}
             description={t('homePageCoverTexts.welcomeToOurLoveStory.description')}
             buttonTitle={t('homePageCoverTexts.welcomeToOurLoveStory.button')}
+            arroyDirection='top-bottom'
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -53,6 +55,7 @@ const HomePage = ({ t }) => {
             title={t('homePageCoverTexts.aboutUs.title')}
             description={t('homePageCoverTexts.aboutUs.description')}
             buttonTitle={t('homePageCoverTexts.aboutUs.button')}
+            arroyDirection='top-bottom'
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -62,6 +65,7 @@ const HomePage = ({ t }) => {
             title={t('homePageCoverTexts.ourBrands.title')}
             description={t('homePageCoverTexts.ourBrands.description')}
             buttonTitle={t('homePageCoverTexts.ourBrands.button')}
+            arroyDirection='top-bottom'
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -71,6 +75,7 @@ const HomePage = ({ t }) => {
             title={t('homePageCoverTexts.findUs.title')}
             description={t('homePageCoverTexts.findUs.description')}
             buttonTitle={t('homePageCoverTexts.findUs.button')}
+            arroyDirection='top'
           />
         </SwiperSlide>
       </Swiper>

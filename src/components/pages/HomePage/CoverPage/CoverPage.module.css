@@ -2,17 +2,13 @@
   height: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-size: cover;
   background-position: center;
 }
 
-.section {
-  margin-top: auto;
-  margin-left: 24px;
-  margin-right: 24px;
-}
+.section {}
 
 .text-primary {
   color: white;
