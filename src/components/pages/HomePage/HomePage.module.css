@@ -8,5 +8,10 @@
 
 .dialog-content {
   display: flex;
+  flex-direction: column;
+}
+
+.dialog-exit-content {
+  display: flex;
   justify-content: flex-end;
 }

@@ -78,8 +78,8 @@ const HomePage = ({ t }) => {
         fullScreen
         open={dialogOpen}
       >
-        <DialogContent dividers>
-          <Box className={styles['dialog-content']} >
+        <DialogContent dividers className={styles['dialog-content']} >
+          <Box className={styles['dialog-exit-content']} >
             <CloseIcon fontSize="large" onClick={() => setDialogOpen(false) }/>
           </Box>
           {componentToRender}

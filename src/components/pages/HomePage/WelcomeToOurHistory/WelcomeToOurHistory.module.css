@@ -1,6 +1,9 @@
 .WelcomeToOurHistory {
   height: inherit;
   text-align: justify;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-container {
