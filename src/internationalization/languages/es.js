@@ -12,6 +12,21 @@ const es = {
       description: '',
       button: 'Leer más'
     },
+    aboutUs: {
+      title: 'Sobre Nosotros',
+      description: '',
+      button: 'Leer más',
+    },
+    ourBrands: {
+      title: 'Nuestras Marcas',
+      description: '',
+      button: 'Leer más',
+    },
+    findUs: {
+      title: 'Encuentranos',
+      description: '',
+      button: 'Leer más',
+    },
   },
   others: {
     welcomeToOurLoveStory: {

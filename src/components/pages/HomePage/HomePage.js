@@ -12,6 +12,9 @@ import { withTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { rootPath } from '../../../routes/routesDom';
 import CloseIcon from '@mui/icons-material/Close';
+import AboutUs from './AboutUs/AboutUs';
+import OurBrands from './OurBrands/OurBrands';
+import FindUs from './FindUs/FindUs';
 
 const HomePage = ({ t }) => {
   const navigate = useNavigate();
@@ -43,9 +46,33 @@ const HomePage = ({ t }) => {
             buttonTitle={t('homePageCoverTexts.welcomeToOurLoveStory.button')}
           />
         </SwiperSlide>
-        <SwiperSlide>about us</SwiperSlide>
-        <SwiperSlide>brands images</SwiperSlide>
-        <SwiperSlide>find us</SwiperSlide>
+        <SwiperSlide>
+          <CoverPage
+            buttonOnClick={(e) => { setComponentToRender(<AboutUs />); setDialogOpen(true); }}
+            imageBackground='/images/backgroundCoverPages/dresses.jpg'
+            title={t('homePageCoverTexts.aboutUs.title')}
+            description={t('homePageCoverTexts.aboutUs.description')}
+            buttonTitle={t('homePageCoverTexts.aboutUs.button')}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CoverPage
+            buttonOnClick={(e) => { setComponentToRender(<OurBrands />); setDialogOpen(true); }}
+            imageBackground='/images/backgroundCoverPages/room.jpg'
+            title={t('homePageCoverTexts.ourBrands.title')}
+            description={t('homePageCoverTexts.ourBrands.description')}
+            buttonTitle={t('homePageCoverTexts.ourBrands.button')}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CoverPage
+            buttonOnClick={(e) => { setComponentToRender(<FindUs />); setDialogOpen(true); }}
+            imageBackground='/images/backgroundCoverPages/mirror-vase.jpg'
+            title={t('homePageCoverTexts.findUs.title')}
+            description={t('homePageCoverTexts.findUs.description')}
+            buttonTitle={t('homePageCoverTexts.findUs.button')}
+          />
+        </SwiperSlide>
       </Swiper>
       <Dialog
         fullScreen

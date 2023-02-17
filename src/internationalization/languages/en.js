@@ -12,6 +12,21 @@ const en = {
       description: '',
       button: 'Read more',
     },
+    aboutUs: {
+      title: 'About Us',
+      description: '',
+      button: 'Read more',
+    },
+    ourBrands: {
+      title: 'Our Brands',
+      description: '',
+      button: 'Read more',
+    },
+    findUs: {
+      title: 'Find Us',
+      description: '',
+      button: 'Read more',
+    },
   },
   others: {
     welcomeToOurLoveStory: {
