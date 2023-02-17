@@ -5,3 +5,8 @@
 .swiper {
   height: 100%;
 }
+
+.dialog-content {
+  display: flex;
+  justify-content: flex-end;
+}

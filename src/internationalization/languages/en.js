@@ -6,6 +6,13 @@ const en = {
     appointment: 'Appointment',
     'contact-us': 'Contact Us',
   },
+  homePageCoverTexts: {
+    welcomeToOurLoveStory: {
+      title: 'Welcome to Our Love Story',
+      description: '',
+      button: 'Read more',
+    },
+  },
   others: {
     welcomeToOurLoveStory: {
       title: 'Welcome To Our Love Story.',
@@ -15,6 +22,7 @@ const en = {
       end: 'Patricia Sobrin - CEO',
     },
   },
+
 }
 
 export default en;

@@ -6,6 +6,13 @@ const es = {
     appointment: 'Cita',
     'contact-us': 'Contáctenos',
   },
+  homePageCoverTexts: {
+    welcomeToOurLoveStory: {
+      title: 'Bienvenidos a Nuestra Historia de Amor',
+      description: '',
+      button: 'Leer más'
+    },
+  },
   others: {
     welcomeToOurLoveStory: {
       title: 'Bienvenido a Nuestra Historia de Amor.',
