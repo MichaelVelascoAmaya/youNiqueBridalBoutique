@@ -6,6 +6,9 @@ import LanguageIcon from '@mui/icons-material/Language';
 import LanguagesOption from '../components/menuComponents/LanguagesOption/LanguagesOption';
 import { Translation } from 'react-i18next';
 import HomePage from '../components/pages/HomePage/HomePage';
+import CollectionsPage from '../components/pages/CollectionsPage/CollectionsPage';
+import AppointmentPage from '../components/pages/AppointmentPage/AppointmentPage';
+import ContactUsPage from '../components/pages/ContactUsPage/ContactUsPage';
 
 // get route info by path
 const routeByPath = path => routesDom.routes.find(element => element.path === path);
@@ -35,7 +38,7 @@ const routesDom = createBrowserRouter([
       },
       {
         path: 'collections',
-        element: <div>collections!</div>,
+        element: <CollectionsPage />,
         label: transtaleComp('menuList.collections'),
         icon: dressIcon,
         navigateButton: true,
@@ -53,7 +56,7 @@ const routesDom = createBrowserRouter([
       },
       {
         path: "appointment",
-        element: <div>appointment!</div>,
+        element: <AppointmentPage />,
         label: transtaleComp('menuList.appointment'),
         icon: orderIcon,
         navigateButton: true,
@@ -61,7 +64,7 @@ const routesDom = createBrowserRouter([
       },
       {
         path: "contact-us",
-        element: <div>contact-us!</div>,
+        element: <ContactUsPage />,
         label: transtaleComp('menuList.contact-us'),
         icon: emailIcon,
         navigateButton: true,
