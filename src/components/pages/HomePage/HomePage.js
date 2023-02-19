@@ -13,8 +13,8 @@ import { useNavigate } from 'react-router-dom';
 import { rootPath } from '../../../routes/routesDom';
 import CloseIcon from '@mui/icons-material/Close';
 import AboutUs from './AboutUs/AboutUs';
-import OurBrands from './OurBrands/OurBrands';
 import FindUs from './FindUs/FindUs';
+import ObImages from './OurBrands/ObImages/ObImages';
 
 const HomePage = ({ t }) => {
   const navigate = useNavigate();
@@ -60,12 +60,12 @@ const HomePage = ({ t }) => {
         </SwiperSlide>
         <SwiperSlide>
           <CoverPage
-            buttonOnClick={(e) => { setComponentToRender(<OurBrands />); setDialogOpen(true); }}
             imageBackground='/images/backgroundCoverPages/room.jpg'
             title={t('homePageCoverTexts.ourBrands.title')}
             description={t('homePageCoverTexts.ourBrands.description')}
             buttonTitle={t('homePageCoverTexts.ourBrands.button')}
             arroyDirection='top-bottom'
+            downComponenet={<ObImages />}
           />
         </SwiperSlide>
         <SwiperSlide>

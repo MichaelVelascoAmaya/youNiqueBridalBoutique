@@ -27,7 +27,11 @@ const CoverPage = ({ buttonOnClick, imageBackground, title, description, buttonT
     <Box className={styles.section}>
       <Typography className={styles['text-primary']} variant="h1" fontFamily={'system-ui'} >{title}</Typography>
       <Typography className={styles['text-secondary']} variant='overline' >{description}</Typography>
-      <Button variant="outlined" onClick={buttonOnClick} color='white' size="large" sx={{ mt: 2 }}>{buttonTitle}</Button>
+      {
+        buttonOnClick && (
+          <Button variant="outlined" onClick={buttonOnClick} color='white' size="large" sx={{ mt: 2 }}>{buttonTitle}</Button>
+        )
+      }
     </Box>
 
     {
@@ -54,14 +58,13 @@ CoverPage.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   buttonTitle: PropTypes.string,
-  upComponent: PropTypes.elementType,
-  downComponenet: PropTypes.elementType,
+  upComponent: PropTypes.element,
+  downComponenet: PropTypes.element,
   arrowOnclick: PropTypes.func,
   arroyDirection: PropTypes.oneOf(['top', 'bottom', 'left', 'rigth', 'top-bottom', 'left-rigth']),
 };
 
 CoverPage.defaultProps = {
-  buttonOnClick: () => {},
   title: <Trans>withoutTranslations.appName</Trans>,
   imageBackground: '',
   description: '',
