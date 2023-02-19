@@ -7,20 +7,18 @@ import arrowDown from 'react-useanimations/lib/arrowDown';
 import arrowUp from 'react-useanimations/lib/arrowUp';
 import { Trans } from 'react-i18next';
 
-const CoverPage = ({ buttonOnClick, imageBackground, title, description, buttonTitle, upComponent, downComponenet, arrowOnclick, arroyDirection }) => (
-  <Box className={styles.CoverPage} sx={{ backgroundImage: 'url("' + imageBackground + '");' }} data-testid="CoverPage" >
+const CoverPage = ({ buttonOnClick, imageBackground, title, description, buttonTitle, upComponent, downComponenet, endIconComponent, startIconComponent, arrowOnclick, arroyDirection, containerSx, sectionUpSx, sectionDownSx }) => (
+  <Box className={styles.CoverPage} sx={{ ...containerSx, backgroundImage: 'url("' + imageBackground + '");' }} data-testid="CoverPage" >
     <Box className={styles.section}>
     {
       (arroyDirection && (arroyDirection === 'top' || arroyDirection === 'top-bottom')) && 
-      (
-        <UseAnimations animation={arrowUp} size={48} onClick={arrowOnclick} />
-      )
+      (<Box onClick={arrowOnclick} sx={{ ...startIconComponent.sxComponent }} >{startIconComponent.component}</Box>)
     }
     </Box>
 
     {
       upComponent && (
-        <Box className={styles.section}>{upComponent}</Box>
+        <Box className={styles.section} sx={{ ...upComponent.sxComponent }} >{upComponent.component}</Box>
       )
     }
 
@@ -36,16 +34,14 @@ const CoverPage = ({ buttonOnClick, imageBackground, title, description, buttonT
 
     {
       downComponenet && (
-        <Box className={styles.section}>{downComponenet}</Box>
+        <Box className={styles.section} sx={{ ...downComponenet.sxComponent }} >{downComponenet.component}</Box>
       )
     }
 
     <Box className={styles.section}>
     {
       (arroyDirection && (arroyDirection === 'bottom' || arroyDirection === 'top-bottom')) && 
-      (
-        <UseAnimations animation={arrowDown} size={48} onClick={arrowOnclick} />
-      )
+      (<Box onClick={arrowOnclick} sx={{ ...endIconComponent.sxComponent }} >{endIconComponent.component}</Box>)
     }
     </Box>
 
@@ -58,10 +54,27 @@ CoverPage.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   buttonTitle: PropTypes.string,
-  upComponent: PropTypes.element,
-  downComponenet: PropTypes.element,
+  upComponent: PropTypes.shape({
+    component: PropTypes.element,
+    sxComponent: PropTypes.object,
+  }),
+  downComponenet: PropTypes.shape({
+    component: PropTypes.element,
+    sxComponent: PropTypes.object,
+  }),
+  endIconComponent: PropTypes.shape({
+    component: PropTypes.element,
+    sxComponent: PropTypes.object,
+  }),
+  startIconComponent: PropTypes.shape({
+    component: PropTypes.element,
+    sxComponent: PropTypes.object,
+  }),
   arrowOnclick: PropTypes.func,
   arroyDirection: PropTypes.oneOf(['top', 'bottom', 'left', 'rigth', 'top-bottom', 'left-rigth']),
+  containerSx: PropTypes.object,
+  sectionUpSx: PropTypes.object,
+  sectionDownSx: PropTypes.object,
 };
 
 CoverPage.defaultProps = {
@@ -69,7 +82,16 @@ CoverPage.defaultProps = {
   imageBackground: '',
   description: '',
   buttonTitle: '-',
+  endIconComponent: {
+    component: <UseAnimations animation={arrowDown} size={48} />
+  },
+  startIconComponent: {
+    component: <UseAnimations animation={arrowUp} size={48} />
+  },
   arrowOnclick: () => { },
+  containerSx: {},
+  sectionUpSx: {},
+  sectionDownSx: {},
 };
 
 export default CoverPage;

@@ -15,6 +15,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import AboutUs from './AboutUs/AboutUs';
 import FindUs from './FindUs/FindUs';
 import ObImages from './OurBrands/ObImages/ObImages';
+import Copyright from '../../Footer/Copyright/Copyright';
 
 const HomePage = ({ t }) => {
   const navigate = useNavigate();
@@ -65,17 +66,26 @@ const HomePage = ({ t }) => {
             description={t('homePageCoverTexts.ourBrands.description')}
             buttonTitle={t('homePageCoverTexts.ourBrands.button')}
             arroyDirection='top-bottom'
-            downComponenet={<ObImages />}
+            downComponenet={{
+              component: <ObImages />
+            }}
           />
         </SwiperSlide>
         <SwiperSlide>
           <CoverPage
-            buttonOnClick={(e) => { setComponentToRender(<FindUs />); setDialogOpen(true); }}
             imageBackground='/images/backgroundCoverPages/mirror-vase.jpg'
             title={t('homePageCoverTexts.findUs.title')}
             description={t('homePageCoverTexts.findUs.description')}
             buttonTitle={t('homePageCoverTexts.findUs.button')}
-            arroyDirection='top'
+            arroyDirection='top-bottom'
+            endIconComponent={{
+              component: <Copyright />,
+              sxComponent: { width: '100%' }
+            }}
+            downComponenet={{
+              component: <FindUs />,
+              sxComponent: { width: '100%' }
+            }}
           />
         </SwiperSlide>
       </Swiper>
