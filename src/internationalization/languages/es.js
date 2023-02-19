@@ -28,6 +28,15 @@ const es = {
       button: 'Leer más',
     },
   },
+  weekDays: {
+    monday: 'Lunes',
+    tuesday: 'Martes',
+    wednesday: 'Miercoles',
+    thursday: 'Jueves',
+    friday: 'Viernes',
+    saturday: 'Sábado',
+    sunday: 'Domingo'
+  },
   others: {
     welcomeToOurLoveStory: {
       title: 'Bienvenido a Nuestra Historia de Amor.',

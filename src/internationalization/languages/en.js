@@ -28,6 +28,15 @@ const en = {
       button: 'Read more',
     },
   },
+  weekDays: {
+    monday: 'Monday',
+    tuesday: 'Tuesday',
+    wednesday: 'Wednesday',
+    thursday: 'Thursday',
+    friday: 'Friday',
+    saturday: 'Saturday',
+    sunday: 'Sunday'
+  },
   others: {
     welcomeToOurLoveStory: {
       title: 'Welcome To Our Love Story.',
@@ -58,7 +67,6 @@ const en = {
       },
     },
   },
-
 }
 
 export default en;
