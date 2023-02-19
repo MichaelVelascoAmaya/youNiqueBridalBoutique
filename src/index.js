@@ -7,13 +7,16 @@ import { ThemeProvider } from '@emotion/react';
 import theme from './others/themeApp';
 import { RouterProvider } from "react-router-dom";
 import { routesDom } from './routes/routesDom';
+import { SnackbarProvider } from 'notistack';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider theme={theme}>
     <I18nextProvider i18n={i18n}>
       <React.StrictMode>
-        <RouterProvider router={routesDom} />
+        <SnackbarProvider maxSnack={3}>
+          <RouterProvider router={routesDom} />
+        </SnackbarProvider>
       </React.StrictMode>
     </I18nextProvider>
   </ThemeProvider>
