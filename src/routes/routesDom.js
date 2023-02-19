@@ -9,6 +9,7 @@ import HomePage from '../components/pages/HomePage/HomePage';
 import CollectionsPage from '../components/pages/CollectionsPage/CollectionsPage';
 import AppointmentPage from '../components/pages/AppointmentPage/AppointmentPage';
 import ContactUsPage from '../components/pages/ContactUsPage/ContactUsPage';
+import { exitModal } from '../components/menuComponents/MenuList/MenuList'
 
 // get route info by path
 const routeByPath = path => routesDom.routes.find(element => element.path === path);
@@ -56,11 +57,15 @@ const routesDom = createBrowserRouter([
       },
       {
         path: "appointment",
-        element: <AppointmentPage />,
+        element: <AppointmentPage callbackOnSubmit={exitModal} />,
         label: transtaleComp('menuList.appointment'),
         icon: orderIcon,
-        navigateButton: true,
-        useDefaultActionOnClick: true,
+        navigateButton: false,
+        useDefaultActionOnClick: false,
+        useDialog: {
+          title: transtaleComp('menuList.appointment'),
+          sx: { textAlign: 'center' }
+        }, 
       },
       {
         path: "contact-us",

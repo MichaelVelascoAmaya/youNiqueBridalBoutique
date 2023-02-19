@@ -28,6 +28,31 @@ const en = {
       button: 'Read more',
     },
   },
+  appointmentForm:{
+    title: 'Schedule an appointment with us.',
+    shedule: 'Schedule',
+    labels:{
+      name: 'Name',
+      lastName: 'Last Name',
+      phone: 'Phone',
+      email: 'Email',
+      date: 'When would you like to come?',
+      affair: 'Affair',
+      message: 'Message',
+    },
+    errors: {
+      requiredField: 'This field is required.'
+    }
+  },
+  success:{
+    emailSent: 'Email sent.'
+  },
+  errors:{
+    contentNotAvailable: 'Content not available.',
+    contentNotFound: 'Content not found.',
+    weWorkToSolve: 'Sorry, we are working to resolve it.',
+    emailSent: 'Could not send email please try again later.',
+  },
   weekDays: {
     monday: 'Monday',
     tuesday: 'Tuesday',

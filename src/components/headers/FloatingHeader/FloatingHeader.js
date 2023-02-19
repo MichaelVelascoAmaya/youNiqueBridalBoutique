@@ -4,7 +4,7 @@ import styles from './FloatingHeader.module.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Drawer, Fab, Paper } from '@mui/material';
 import Image from 'mui-image';
-import MenuList from '../../menuComponents/MenuList/MenuList';
+import { MenuList } from '../../menuComponents/MenuList/MenuList';
 
 const FloatingHeader = ({ anchor, otherButtons, reference }) => {
   const [open, setopen] = useState(false);

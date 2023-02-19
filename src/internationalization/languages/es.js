@@ -28,6 +28,31 @@ const es = {
       button: 'Leer más',
     },
   },
+  appointmentForm:{
+    title: 'Agenda una cita con nosotros.',
+    shedule: 'Agendar',
+    labels:{
+      name: 'Nombre',
+      lastName: 'Apellido',
+      phone: 'Teléfono',
+      email: 'Correo electrónico',
+      date: '¿Cuándo te gustaría venir?',
+      affair: 'Asunto',
+      message: 'Mensaje',
+    },
+    errors: {
+      requiredField: 'Este campo es requerido.'
+    }
+  },
+  success:{
+    emailSent: 'Correo electrónico enviado.'
+  },
+  errors:{
+    contentNotAvailable: 'Contenido no disponible.',
+    contentNotFound: 'Contenido no encontrado.',
+    weWorkToSolve: 'Lo sentimos, estamos trabajando para resolverlo.',
+    emailSent: 'No se pudo enviar el correo electrónico, inténtelo de nuevo más tarde.',
+  },
   weekDays: {
     monday: 'Lunes',
     tuesday: 'Martes',

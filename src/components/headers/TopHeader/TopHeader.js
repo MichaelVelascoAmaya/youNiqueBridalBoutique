@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './TopHeader.module.css';
 import { Paper } from '@mui/material';
 import Image from 'mui-image';
-import MenuList from '../../menuComponents/MenuList/MenuList';
+import { MenuList } from '../../menuComponents/MenuList/MenuList';
 
 const TopHeader = ({ otherButtons, reference }) => (
   <Paper component='header' className={styles.TopHeader} square ref={reference} >
