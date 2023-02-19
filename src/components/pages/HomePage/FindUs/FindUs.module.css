@@ -1,1 +1,16 @@
-.FindUs {}
+.FindUs {
+  background-color: rgb(250,250,250, 0.75);
+  width: 100%;
+}
+
+.grid-section {
+  /* padding: 22px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: xx-large!important;
+}
