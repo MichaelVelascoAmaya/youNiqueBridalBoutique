@@ -22,7 +22,7 @@ const CoverPage = ({ buttonOnClick, imageBackground, title, description, buttonT
       )
     }
 
-    <Box className={styles.section}>
+    <Box className={styles.section} sx={{ px: 3 }}>
       <Typography className={styles['text-primary']} variant="h1" fontFamily={'system-ui'} >{title}</Typography>
       <Typography className={styles['text-secondary']} variant='overline' >{description}</Typography>
       {
