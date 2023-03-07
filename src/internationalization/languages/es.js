@@ -91,6 +91,7 @@ const es = {
         },
       },
     },
+    ourNetworks: 'Nuestras Redes',
   },
 }
 

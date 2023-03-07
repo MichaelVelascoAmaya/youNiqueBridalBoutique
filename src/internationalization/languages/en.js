@@ -91,6 +91,7 @@ const en = {
         },
       },
     },
+    ourNetworks: 'Our Networks',
   },
 }
 

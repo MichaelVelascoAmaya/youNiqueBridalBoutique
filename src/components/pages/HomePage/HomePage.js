@@ -16,6 +16,8 @@ import AboutUs from './AboutUs/AboutUs';
 import FindUs from './FindUs/FindUs';
 import ObImages from './OurBrands/ObImages/ObImages';
 import Copyright from '../../Footer/Copyright/Copyright';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import { FacebookIcon, InstagramIcon } from '../../../assets/icons/icons';
 
 const HomePage = ({ t }) => {
   const navigate = useNavigate();
@@ -76,8 +78,21 @@ const HomePage = ({ t }) => {
             imageBackground='/images/backgroundCoverPages/mirror-vase.jpg'
             title={t('homePageCoverTexts.findUs.title')}
             description={t('homePageCoverTexts.findUs.description')}
-            buttonTitle={t('homePageCoverTexts.findUs.button')}
+            buttonTitle={t('others.ourNetworks')}
+            buttonIcon={{
+              position: 'end',
+              icon: <ThumbUpOffAltIcon />
+            }}
             arroyDirection='top-bottom'
+            buttonOnClick={(e) => {
+              e.target.children[0].style.color = e.target.children[0].style.color === 'rgb(66, 103, 178)' ? '#fff' : '#4267B2';
+            }}
+            buttonRightComponent={
+            <Box>
+              <Box component='a' href={t('withoutTranslations.socialNetworks.facebook.url')} target='_blank'><FacebookIcon sx={{ fontSize: 50 }} /></Box>
+              <Box component='a' href={t('withoutTranslations.socialNetworks.instagram.url')} target='_blank'><InstagramIcon sx={{ fontSize: 45 }} /></Box>
+            </Box>
+            }
             endIconComponent={{
               component: <Copyright />,
               sxComponent: { width: '100%' }
